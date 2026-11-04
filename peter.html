@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peter Cheruiyot – IT Student & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2ec; --surface:#fbfcfa; --ink:#14201a; --muted:#51604f; --line:#cdd8ca;
+  --leaf:#1f4d3a; --leaf-ink:#ffffff; --amber:#b9731a; --contour:#c3d0c0;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a14; --surface:#16251c; --ink:#e8efe6; --muted:#9db09b; --line:#27382c;
+    --leaf:#7fcf9f; --leaf-ink:#0f1a14; --amber:#e3a252; --contour:#1f3226; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a14; --surface:#16251c; --ink:#e8efe6; --muted:#9db09b; --line:#27382c;
+  --leaf:#7fcf9f; --leaf-ink:#0f1a14; --amber:#e3a252; --contour:#1f3226; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;gap:1rem;flex-wrap:wrap}
+nav .links{display:flex;gap:1.25rem;font-weight:500}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:2rem;padding:.35rem .9rem;font:inherit;cursor:pointer}
+
+/* hero */
+.hero{position:relative;padding:4.5rem 0 5rem;overflow:hidden}
+.hero svg{position:absolute;right:-8%;top:-10%;width:75%;max-width:44rem;height:auto;z-index:0;pointer-events:none}
+.hero svg path{fill:none;stroke:var(--contour);stroke-width:1.5}
+.hero .in{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.8rem,9vw,6rem);font-weight:800;letter-spacing:-.03em}
+.role{margin:1.25rem 0 0;font-size:1.25rem;max-width:34rem}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2rem;padding:0;list-style:none}
+.facts li{background:var(--surface);border:1px solid var(--line);border-radius:2rem;padding:.3rem .9rem;font-size:.95rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:2px solid var(--leaf);transition:transform .15s;font-family:inherit;font-size:1rem;cursor:pointer}
+.btn.main{background:var(--leaf);color:var(--leaf-ink)}
+.btn.alt{color:var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1.5rem}
+.about{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:42rem}
+.about p{margin:0 0 1rem}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.skills div{border-left:4px solid var(--leaf);padding:.25rem 0 .25rem 1rem}
+.skills h3{font-size:1.2rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted)}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.25rem}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.proj h3{font-size:1.3rem}
+.proj p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;padding:0;list-style:none}
+.tags li{font-size:.85rem;color:var(--leaf);border:1px solid var(--line);border-radius:.3rem;padding:.1rem .55rem}
+.proj a{font-weight:600;color:var(--amber)}
+
+.timeline{list-style:none;margin:0;padding:0;max-width:42rem}
+.timeline li{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.timeline b{font-family:"Bricolage Grotesque",sans-serif}
+.timeline span{color:var(--muted)}
+
+.contact p{max-width:34rem;margin:0 0 1.5rem}
+form{display:grid;gap:1rem;max-width:34rem}
+label{display:grid;gap:.35rem;font-weight:500}
+input,textarea{font:inherit;padding:.7rem .8rem;border:1px solid var(--line);border-radius:.5rem;background:var(--surface);color:var(--ink)}
+textarea{min-height:7rem;resize:vertical}
+#note{min-height:1.5rem;color:var(--leaf);font-weight:600}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+
+@media (max-width:34rem){
+  .timeline li{grid-template-columns:1fr;gap:.1rem}
+  .hero{padding-top:3rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <strong>Peter Cheruiyot</strong>
+    <div class="links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+  </nav>
+
+  <header class="hero">
+    <svg viewBox="0 0 600 500" aria-hidden="true">
+      <path d="M40 330C60 220 160 150 280 160s220 70 250 170-80 140-240 140S20 440 40 330Z"/>
+      <path d="M90 325C108 240 190 190 285 198s175 55 200 135-65 110-195 110S75 400 90 325Z"/>
+      <path d="M140 320c15-60 80-95 150-90s130 40 148 100-50 80-150 80-165-30-148-90Z"/>
+      <path d="M190 315c12-38 55-58 102-54s90 28 100 66-35 52-105 52-109-24-97-64Z"/>
+      <path d="M240 310c8-18 32-28 55-25s50 15 55 36-20 28-58 28-60-14-52-39Z"/>
+    </svg>
+    <div class="in">
+      <h1>Peter<br>Cheruiyot</h1>
+      <p class="role">Third-year IT student at the University of Eldoret, building practical software and websites from the Nandi hills.</p>
+      <ul class="facts">
+        <li>Age 22</li>
+        <li>Nandi Tinderet, Kenya</li>
+        <li>University of Eldoret, Year 3</li>
+      </ul>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my work</a>
+        <a class="btn alt" href="tel:+254722927720">Call +254 722 927 720</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <p>I’m Peter, a 22-year-old Information Technology student in my third year at the University of Eldoret. I live in Nandi Tinderet, where the tea estates and the forest hills are a good reminder to build things patiently and well.</p>
+        <p>I enjoy turning everyday problems into working software, from small web pages to systems that save people time. I’m looking for internships and attachments where I can learn from a team and ship real work.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Web development</h3><p>HTML, CSS, JavaScript, responsive layouts</p></div>
+        <div><h3>Programming</h3><p>Python, Java, problem solving and algorithms</p></div>
+        <div><h3>Databases</h3><p>SQL, MySQL, designing and querying tables</p></div>
+        <div><h3>Tools</h3><p>Git and GitHub, VS Code, Linux basics</p></div>
+        <div><h3>Networking and support</h3><p>Troubleshooting, basic network setup, system care</p></div>
+        <div><h3>Working with people</h3><p>Teamwork, clear communication, quick learning</p></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="proj">
+          <h3>Student attendance system</h3>
+          <p>A web app where lecturers mark attendance by unit and admins review the records.</p>
+          <ul class="tags"><li>JavaScript</li><li>SQL</li></ul>
+          <a href="#">View on GitHub</a>
+        </article>
+        <article class="proj">
+          <h3>Personal finance tracker</h3>
+          <p>Tracks income and spending by category and shows a monthly summary.</p>
+          <ul class="tags"><li>Python</li><li>SQLite</li></ul>
+          <a href="#">View on GitHub</a>
+        </article>
+        <article class="proj">
+          <h3>Small business website</h3>
+          <p>A fast, mobile-friendly site for a local business, with a contact form and product list.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a href="#">View live site</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li><b>2023 – now</b><div>BSc Information Technology<br><span>University of Eldoret, currently in year 3</span></div></li>
+        <li><b>Earlier</b><div>Secondary school<br><span>Add your school and KCSE year here</span></div></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Let’s work together</h2>
+      <p>For internships, attachments or a website project, send me a message and I’ll reply as soon as I can.</p>
+      <div class="btns" style="margin-bottom:2rem">
+        <a class="btn main" href="tel:+254722927720">Call +254 722 927 720</a>
+        <a class="btn alt" href="https://wa.me/254722927720">WhatsApp me</a>
+      </div>
+      <form id="form">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button class="btn main" type="submit">Send message</button>
+        <div id="note" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="yr"></span> Peter Cheruiyot. Nandi Tinderet, Kenya.
+  </footer>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var root = document.documentElement, btn = document.getElementById('theme');
+  btn.addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+  });
+  document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, to = 'your.email@example.com';
+    var subject = encodeURIComponent('Portfolio message from ' + f.name.value);
+    var body = encodeURIComponent(f.message.value + '\n\n' + f.name.value + ' (' + f.email.value + ')');
+    document.getElementById('note').textContent = 'Opening your email app to send the message.';
+    window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+  });
+})();
+</script>
+</body>
+</html>
